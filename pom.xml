@@ -45,7 +45,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
-
+		<repository>
+			<id>jbt</id>
+			<layout>p2</layout>
+			<url>http://download.jboss.org/jbosstools/neon/stable/updates/core/</url>
+		</repository>
 		<repository>
 			<id>jboss-public</id>
 			<name>JBoss Public Maven Repository Group</name>
