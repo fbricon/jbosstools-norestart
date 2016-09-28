@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JBoss Tools No-Restart Core
+Bundle-SymbolicName: org.jboss.tools.norestart.core;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.jboss.tools.norestart.core.internal.CoreActivator
+Bundle-Vendor: Red Hat, Inc.
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.debug.core,
+ org.eclipse.jdt.launching,
+ org.eclipse.jdt.core,
+ org.eclipse.core.variables
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jboss.tools.norestart.core.internal;x-friends:="org.jboss.tools.norestart.ui,org.jboss.tools.norestart.fakereplace.core,org.jboss.tools.norestart.fakereplace.ui"

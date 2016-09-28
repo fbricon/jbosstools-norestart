@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabs">
+		<tab class="org.jboss.tools.norestart.ui.internal.NoRestartTab"
+			group="org.eclipse.jdt.debug.ui.launchConfigurationTabGroup.localJavaApplication"
+			id="org.jboss.tools.norestart.ui.localJavaApplication"
+			name="No-Restart">
+			<placement after="org.eclipse.debug.ui.CommonTab" />
+		</tab>
+		<tab class="org.jboss.tools.norestart.ui.internal.NoRestartTab"
+			group="org.eclipse.jdt.junit.launchConfigurationTabGroup.junit"
+			id="org.jboss.tools.norestart.ui.junit"
+			name="No-Restart">
+			<placement after="org.eclipse.debug.ui.CommonTab" />
+		</tab>
+		<tab class="org.jboss.tools.norestart.ui.internal.NoRestartTab"
+            group="org.eclipse.pde.ui.launcher.WorkbenchLauncherTabGroup"
+            id="org.jboss.tools.norestart.ui.workbench"
+            name="No-Restart">
+            <placement after="org.eclipse.debug.ui.CommonTab" />
+        </tab>
+        <tab
+            class="org.jboss.tools.norestart.ui.internal.NoRestartTab"
+            group="org.jboss.ide.eclipse.as.core.jbossLaunchTabGroup"
+            id="org.jboss.tools.norestart.ui.jboss"
+            name="No-Restart">
+            <placement after="org.eclipse.debug.ui.CommonTab" />
+      </tab>
+	</extension>
+</plugin>

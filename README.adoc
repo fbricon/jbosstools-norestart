@@ -1,0 +1,6 @@
+# NoRestart
+
+Enable FakeReplace in Eclipse to augment the Hot Code Replacement capabilities of the JVM.
+
+- enabled for Java Applications
+- enabled for JBoss Servers

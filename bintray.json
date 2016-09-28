@@ -1,0 +1,20 @@
+{
+    "package": {
+        "subject": "fbricon",
+        "repo": "poc",
+        "name": "jbosstools-norestart"
+    },
+    "version": {
+        "name": "latest"
+    },
+    "files": [
+        {
+            "includePattern": "org.jboss.tools.norestart.site/target/repository/(.*)",
+            "uploadPattern": "jbosstools-norestart/latest/$1",
+            "matrixParams": {
+                "override": 1
+            }
+        }
+    ],
+    "publish": true
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.jboss.tools.norestart.core.noRestartLaunchDelegates">
+      <noRestartLaunchDelegate
+            class="org.jboss.tools.norestart.fakereplace.internal.FakeReplaceLaunchDelegate"
+            id="fakereplace"
+            modes="debug"
+            name="Fakereplace">
+      </noRestartLaunchDelegate>
+   </extension>
+</plugin>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+      <extension-point id="noRestartLaunchDelegates" name="noRestartLaunchDelegates" schema="schema/noRestartLaunchDelegates.exsd"/>
+
+    <extension point="org.eclipse.core.variables.dynamicVariables">
+        <variable 
+        	name="no_restart_vmargs"
+        	description="No-Restart VM Arguments" 
+            resolver="org.jboss.tools.norestart.core.internal.NoRestartVariableResolver" />
+    </extension>
+
+</plugin>

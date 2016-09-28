@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.jboss.tools.norestart.feature_0.0.0.qualifier.jar" id="org.jboss.tools.norestart.feature" version="0.0.0">
+      <category name="norestart"/>
+   </feature>
+   <!--feature url="features/org.jboss.tools.norestart.feature.source_0.0.0.qualifier.jar" id="org.jboss.tools.norestart.feature.source" version="0.0.0">
+      <category name="norestart.sdk"/>
+   </feature-->
+   <category-def name="norestart" label="JBoss Tools No-Restart"/>
+   <category-def name="norestart.sdk" label="JBoss Tools No-Restart (SDK)"/>
+</site>
