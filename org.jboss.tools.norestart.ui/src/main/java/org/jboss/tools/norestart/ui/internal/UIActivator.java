@@ -10,11 +10,11 @@
  ******************************************************************************/
 package org.jboss.tools.norestart.ui.internal;
 
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.jboss.tools.norestart.core.internal.CoreActivator;
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-public class UIActivator implements BundleActivator {
+public class UIActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID =  CoreActivator.ROOT_PLUGIN_ID+".ui";
 	private static UIActivator instance;

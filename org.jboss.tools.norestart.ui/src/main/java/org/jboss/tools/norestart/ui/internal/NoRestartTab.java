@@ -10,7 +10,6 @@
  ******************************************************************************/
 package org.jboss.tools.norestart.ui.internal;
 
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
@@ -19,12 +18,13 @@ import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.jboss.tools.norestart.core.internal.NoRestartLaunchUtils;
 import org.jboss.tools.norestart.core.internal.NoRestartConstants;
+import org.jboss.tools.norestart.core.internal.NoRestartLaunchUtils;
 
 public class NoRestartTab extends AbstractLaunchConfigurationTab {
 
@@ -70,6 +70,7 @@ public class NoRestartTab extends AbstractLaunchConfigurationTab {
 	public void performApply(ILaunchConfigurationWorkingCopy launchConfig) {
 		if (enableNoRestartButton.getSelection()) {
 			NoRestartLaunchUtils.addNoRestartVariable(launchConfig);
+			//TODO get implementor value 
 			launchConfig.setAttribute(NoRestartConstants.NO_RESTART_AGENT_LAUNCHKEY, "fakereplace");
 		} else {
 			NoRestartLaunchUtils.removeNoRestartVariable(launchConfig);
@@ -82,4 +83,8 @@ public class NoRestartTab extends AbstractLaunchConfigurationTab {
 		
 	}
 
+	@Override
+	public Image getImage() {
+		return Images.NORESTART_ICON;
+	}
 }
