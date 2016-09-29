@@ -28,4 +28,10 @@
             <placement after="org.eclipse.debug.ui.CommonTab" />
       </tab>
 	</extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page id="org.jboss.tools.norestart.ui.preferences.NoRestartMainPreferencePage"
+            class="org.jboss.tools.norestart.ui.internal.preferences.NoRestartMainPreferencePage"
+            name="No-Restart">
+      </page>
+   </extension>
 </plugin>

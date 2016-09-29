@@ -12,3 +12,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Eclipse-BundleShape: dir
+Export-Package: org.jboss.tools.norestart.fakereplace.internal,
+ org.jboss.tools.norestart.fakereplace.internal.agent;x-friends:="org.jboss.tools.norestart.fakereplace.ui"
+Bundle-Activator: org.jboss.tools.norestart.fakereplace.internal.FakeReplaceCorePluginActivator

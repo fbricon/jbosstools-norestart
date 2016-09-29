@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -25,17 +24,12 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.jboss.tools.norestart.core.internal.AbstractNoReplaceLaunchDelegate;
 import org.jboss.tools.norestart.core.internal.NoRestartLaunchUtils;
-import org.jboss.tools.norestart.core.internal.ResourceUtils;
 
 public class FakeReplaceLaunchDelegate extends AbstractNoReplaceLaunchDelegate {
 
-	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("/agents");
-	
-	private static final String FAKEREPLACE_FILENAME = BUNDLE.getString("fakereplace");
-
 	@Override
 	public String getNoRestartVMArgs(ILaunchConfiguration launchConfig) throws CoreException {
-		String javaAgentUrl = ResourceUtils.getEmbeddedFileUrl("org.jboss.tools.norestart.fakereplace.core", FAKEREPLACE_FILENAME);
+		String javaAgentUrl = FakeReplaceCore.getFakeReplaceAgentManager().getDefaultAgent().getPath();
 		StringBuilder noRestartVMArgs = new StringBuilder()
 				.append(" -Xbootclasspath/a:\"")
 				.append(javaAgentUrl)

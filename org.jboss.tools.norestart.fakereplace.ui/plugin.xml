@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page id="org.jboss.tools.norestart.ui.preferences.fakereplace.FakeReplaceAgentsPreferencePage"
+            category="org.jboss.tools.norestart.ui.preferences.NoRestartMainPreferencePage"
+            class="org.jboss.tools.norestart.fakereplace.ui.internal.preferences.FakeReplaceAgentsPreferencePage"
+            name="FakeReplace">
+      </page>
+   </extension>
 </plugin>
