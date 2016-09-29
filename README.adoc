@@ -11,3 +11,5 @@ It currently supports the following launch configurations:
 - [x] Eclipse Applications
 
 This experimental plugin can be installed in Eclipse from this p2 repository : https://dl.bintray.com/fbricon/poc/jbosstools-norestart/latest/
+
+image:no-restart.png[]
