@@ -13,6 +13,8 @@ package org.jboss.tools.norestart.ui.internal;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
@@ -21,8 +23,10 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Link;
+import org.eclipse.ui.dialogs.PreferencesUtil;
 import org.jboss.tools.norestart.core.internal.NoRestartConstants;
 import org.jboss.tools.norestart.core.internal.NoRestartLaunchUtils;
 
@@ -50,9 +54,9 @@ public class NoRestartTab extends AbstractLaunchConfigurationTab {
 	    		updateLaunchConfigurationDialog();
 	    	}
 		});
-	    
-	    Label label = new Label(group, SWT.NONE);
-	    label.setText("Injects the Fakereplace java agent to the VM arguments");
+	    Link link = new Link(group, SWT.WRAP);
+		link.setText("Injects the <a>Fakereplace</a> java agent to the VM arguments.");
+		link.addSelectionListener(new OpenPreferencesListener());
 	}
 
 	@Override
@@ -86,5 +90,29 @@ public class NoRestartTab extends AbstractLaunchConfigurationTab {
 	@Override
 	public Image getImage() {
 		return Images.NORESTART_ICON;
+	}
+	
+	private static class OpenPreferencesListener extends SelectionAdapter {
+
+		private static final String PREF_PAGE_ID = "org.jboss.tools.norestart.ui.preferences.fakereplace.FakeReplaceAgentsPreferencePage";
+		
+		@Override
+		public void widgetSelected(SelectionEvent e) {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					PreferencesUtil.createPreferenceDialogOn(Display.getDefault().getActiveShell(),
+							PREF_PAGE_ID,
+							new String[] {PREF_PAGE_ID},
+							null
+							).open();
+				}
+			});
+		}
+
+		@Override
+		public void widgetDefaultSelected(SelectionEvent e) {
+			widgetSelected(e);
+		}
 	}
 }

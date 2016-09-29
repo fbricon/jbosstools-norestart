@@ -194,10 +194,6 @@ public class FakeReplaceAgentsPreferencePage extends PreferencePage implements I
     tblclmnName.setWidth(100);
     tblclmnName.setText("Name");
 
-    TableColumn tblclmnVersion = new TableColumn(table, SWT.NONE);
-    tblclmnVersion.setWidth(100);
-    tblclmnVersion.setText("Version");
-
     TableColumn tblclmnHome = new TableColumn(table, SWT.NONE);
     tblclmnHome.setWidth(120);
     tblclmnHome.setText("Path");

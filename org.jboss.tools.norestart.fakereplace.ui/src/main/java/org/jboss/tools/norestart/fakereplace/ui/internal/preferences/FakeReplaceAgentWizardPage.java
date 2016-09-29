@@ -75,7 +75,7 @@ public class FakeReplaceAgentWizardPage extends WizardPage {
         1));
 
     Label lblInstallationLocation = new Label(container, SWT.NONE);
-    lblInstallationLocation.setText("Home directory");
+    lblInstallationLocation.setText("File path");
 
     location = new Text(container, SWT.BORDER);
     location.setEditable(editable);
